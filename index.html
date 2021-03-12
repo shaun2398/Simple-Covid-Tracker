@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="Container">
+        <header>
+            <h1>COVID Tracker Philippines</h1>
+        </header>
+        <div id="cards" class="cards_container">
+            <div id="card_one" class="nationalTracker">
+                <h2>National Tracker</h2>
+                <h3 id="nationalDate">Last Update:  </h3>
+            </div>
+            <div id="card_two" class="infected cards">
+                <h4>INFECTED  <i class="fas fa-virus"></i></h4>
+            </div>
+            <div id="card_three" class="tested cards">
+                <h4>TESTED <i class="fas fa-vial"></i></h4>
+            </div>
+            <div id="card_four" class="recovered cards">
+                <h4>RECOVERED <i class="fas fa-eject"></i></h4>
+            </div>
+            <div id="card_five" class="deceased cards">
+                <h4>DECEASED <i class="fas fa-skull-crossbones"></i></h4>
+            </div>
+            <div id="card_six" class="active cards">
+                <h4>ACTIVE CASES  <i class="fas fa-heartbeat"></i></h4>
+            </div>
+            <div id="card_seven" class="unique cards"> 
+                <h4>UNIQUE <i class="fas fa-fingerprint"></i></h4>
+            </div>
+            <div id="card_eight" class="regionalTracker">
+                <h2>Regional Tracker</h2>
+                <h3 id="regionalDate">Last Update:</h3>
+            </div>
+            <div id="card_nine" class="regionList">
+                <div class="lists">
+                    <ol id="parentList">
+                        <h3>REGION</h3>
+                    </ol>
+                    <ul id="casesList">
+                        <h3>CASES</h3>
+                    </ul>
+                    <ul id="recoveredList">
+                        <h3>RECOVERED</h3>
+                    </ul>
+                    <ul id="deathList">
+                        <h3>DEATHS</h3>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+<script src="https://kit.fontawesome.com/2f1c649cc2.js" crossorigin="anonymous"></script>
+</html>

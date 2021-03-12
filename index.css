@@ -1,0 +1,401 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.Container{
+    width: 100%;
+    min-width: 580px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://images.unsplash.com/photo-1580465446156-0a5b3eee11ae?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* TITLE */
+/* HEADERS */
+h1{
+    font-size: 4rem;
+    color: whitesmoke;
+}
+
+h2{
+    font-size: 2.5rem;
+    color: whitesmoke;
+    padding: 0;
+    margin: 0;
+}
+
+h3{
+    font-size: 1.5rem;
+    color: gray;
+    padding: 0;
+    margin: 0;
+}
+
+/* h4{
+    font-size: 1rem;
+}
+
+h5{
+    font-size: 0.5rem;
+} */
+
+/* dark blue rgba(38,40,51) */
+.cards_container{
+    height: 70vh;
+    width: 70%;
+    max-width: 1200px;
+    background-color: rgb(33, 33, 33, 0.8);
+    display: grid;
+    /* border-radius: 15px; */
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    /* justify-items: center;
+    align-items: center; */
+    grid-gap: 1.5em;
+    overflow-y: auto;
+    grid-template-areas: 
+    /* 5 columns x 4 rows */
+    "t1  t1  t2  t2  t2"
+    "one two sev sev sev"
+    "thr for sev sev sev"
+    "fiv six sev sev sev";
+    padding: 5em;
+    margin-bottom: 10em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.nationalTracker{
+    grid-area: t1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 12px;
+    padding: 1.5em 4.5em 1.5em 1em;
+    background-color: rgba(38,40,51);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.regionalTracker{
+    grid-area: t2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 12px;
+    padding: 1.5em 10em 1.5em 1em;
+    background-color: rgba(38,40,51);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#nationalDate{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+#regionalDate{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.infected{
+    grid-area: one;
+    color: #ff6961;
+}
+.tested{
+    grid-area: two;
+    color: #30d5c8;
+}
+.recovered{
+    grid-area: thr;
+    color: #90ee90;
+}
+.deceased{
+    grid-area: for;
+    color: #add8e6;
+}
+.active{
+    grid-area: fiv;
+    color: #fffcbb;
+}
+.unique{
+    grid-area: six;
+    color: #9e6983;
+}
+
+.regionList{
+    grid-area: sev;
+    height: auto;
+    background-color: rgba(38,40,51);
+    border-radius: 12px;
+    overflow-y: auto;
+}
+
+#listHeadings{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    color: whitesmoke;
+    font-weight: bold;
+    margin-top: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid white ;
+}
+
+.lists{
+    margin: 0;
+    padding: 0;
+    width: auto;
+    right: 2em;
+    height: auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    position: relative
+}
+.list ul{
+    margin: 0;
+    padding: 0;
+}
+.lists ul li{
+    color: whitesmoke;
+    list-style-type: none;
+    font-size: 0.6vw;
+    margin: 2em 0;
+    color: gray;
+}
+
+.lists h3{
+    font-size: 0.8rem;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+#parentList li{
+    text-transform: uppercase;
+    list-style-type: none;
+    color: gray;
+    font-size: 0.6vw;
+    margin: 2em 0;
+    padding: 0;
+
+}
+
+#parentList ol{
+    padding-left: 0;
+    margin: 0;
+}
+
+.cards{
+    /* border: 1px solid white; */
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    background-color: rgba(38,40,51);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 12px;
+}
+
+@media (max-width: 1400px){
+    .cards_container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 0.8fr);
+        height: auto;
+        justify-content: center;
+        grid-template-areas: 
+        "t1  t1  t1"
+        "one two thr"
+        "for fiv six"
+        "t2  t2  t2"
+        "sev sev sev";
+    }
+    .cards{
+        align-self: stretch;
+    }
+    .infected{
+        grid-area: one;
+        align-self: stretch;
+    }
+    .tested{
+        grid-area: two;
+        align-self: stretch;
+    }
+    .recovered{
+        grid-area: thr;
+        align-self: stretch;
+    }
+    .deceased{
+        grid-area: for;
+        align-self: stretch;
+    }
+    .active{
+        grid-area: fiv;
+        align-self: stretch;
+    }
+    .unique{
+        grid-area: six;
+        align-self: stretch;
+    }
+    .regionList{
+        grid-area: sev;
+    }
+    .nationalTracker{
+        grid-area: t1;
+        /* display: none; */
+        }
+    .regionalTracker{
+        grid-area: t2;
+        /* display: none; */
+    }
+    #parentList li{
+        font-size: 1rem;
+    }
+    .lists ul li{
+        color: whitesmoke;
+        list-style-type: none;
+        font-size: 1rem;
+        margin: 2em 0;
+        color: gray;
+    }
+}
+
+@media (max-width: 800px){
+    .Container{
+        width: 100%;
+        background-image: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    header{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-image: url('https://images.unsplash.com/photo-1580465446156-0a5b3eee11ae?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+    h1{
+        /* display: none; */
+        margin: 0;
+        padding: 1em;
+        font-size: 2.5rem;
+        color: whitesmoke;
+    }
+    .cards_container{
+        width: 100%;
+        height: auto;
+        display: grid;
+        background-color: #212121;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto, 1fr);
+        height: auto;
+        justify-content: center;
+        justify-items: center;
+        padding: 0;
+        margin-bottom: 0;
+        grid-template-areas: 
+        "t1"
+        "one"
+        "two"
+        "thr"
+        "for"
+        "fiv"
+        "six"
+        "t2"
+        "sev";
+    }
+    .nationalTracker{
+        background-color: transparent;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        box-shadow: none;
+    }
+    .nationalTracker h2{
+        font-size: 2rem;
+    }
+
+    .nationalTracker p{
+        font-size: 1rem;
+    }
+
+    .regionalTracker{
+        background-color: transparent;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .regionList{
+        width: 95%;
+    }
+    .regionalTracker h2{
+        font-size: 2rem;
+    }
+    .regionalTracker p{
+        font-size: 1rem;
+    }
+
+    .cards{
+        width: 200px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cards h4{
+        padding: 0;
+        margin: 0;
+        font-size: 25px;
+    }
+    .lists{
+        /* min-width: 600px; */
+        height: auto;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        /* right: ; */
+        overflow-y: auto;
+    }
+
+    #parentList li{
+        font-size: 0.5rem;
+    }
+
+    .lists ul li{
+        color: whitesmoke;
+        list-style-type: none;
+        font-size: 0.5rem;
+        margin: 2em 0;
+        color: gray;
+    }
+}
