@@ -15,6 +15,7 @@ const parentList = document.getElementById('parentList')
 const casesList = document.getElementById('casesList');
 const recoveredList = document.getElementById('recoveredList');
 const deathList = document.getElementById('deathList');
+const table = document.getElementById('table');
 
 // REST API FETCH DATA
 
@@ -54,9 +55,10 @@ fetch(link)
     cardUnique.appendChild(newUnique)
 })
 .then(() => {
+    let d = new Date (myArray[0].lastUpdatedAtApify);
     let nationalUpdate =  document.getElementById('nationalDate')
     let updateDateNational = document.createElement('p')
-    updateDateNational.innerHTML = `${myArray[0].lastUpdatedAtApify}`
+    updateDateNational.innerHTML = `${d}`
     nationalUpdate.appendChild(updateDateNational)
 })
 .catch(err => {
@@ -73,25 +75,17 @@ fetch(regionLink)
 .then(() =>{
     caseByRegion[0].map(
         item => {
-            let regionList = document.createElement('li');
-            let caseList = document.createElement('li');
-            let recoveryList = document.createElement('li');
-            let deceasedList = document.createElement('li');
-            regionList.innerHTML = `${item.region}`;
-            caseList.innerHTML = `${item.cases}`;
-            recoveryList.innerHTML = `${item.recovered}`;
-            deceasedList.innerHTML = `${item.deaths}`
-            parentList.appendChild(regionList)
-            casesList.appendChild(caseList);
-            recoveredList.appendChild(recoveryList);
-            deathList.appendChild(deceasedList);
+            let newCaseRow = document.createElement('tr')
+            newCaseRow.innerHTML = `<td>${item.region}</td><td>${item.cases}</td><td>${item.recovered}</td><td>${item.deaths}</td>`
+            table.appendChild(newCaseRow)
         }
     )
 })
 .then(() => {
     lastUpdateRegional = '';
+    let d = regionalLastUpdate
     let updateRegionalDate = document.createElement('p');
-    updateRegionalDate.innerHTML = `   ${regionalLastUpdate}`
+    updateRegionalDate.innerHTML = `${d}`
     regionalUpdate.appendChild(updateRegionalDate)
 })
 .then(() => console.log(caseByRegion))

@@ -40,14 +40,20 @@
                 <h3 id="regionalDate">Last Update:</h3>
             </div>
             <div id="card_nine" class="regionList">
-                <table id="table" class="table">
-                    <tr>
-                        <th>REGION</th>
-                        <th>CASE</th>
-                        <th>RECOVERED</th>
-                        <th>DEATHS</th>
-                    </tr>
-                </table>
+                <div class="lists">
+                    <ol id="parentList">
+                        <h3>REGION</h3>
+                    </ol>
+                    <ul id="casesList">
+                        <h3>CASES</h3>
+                    </ul>
+                    <ul id="recoveredList">
+                        <h3>RECOVERED</h3>
+                    </ul>
+                    <ul id="deathList">
+                        <h3>DEATHS</h3>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -55,3 +61,39 @@
 <script src="index.js"></script>
 <script src="https://kit.fontawesome.com/2f1c649cc2.js" crossorigin="anonymous"></script>
 </html>
+
+
+
+js
+
+fetch(regionLink)
+.then(res => res.json())
+.then(regionData => {
+    regionalLastUpdate = regionData.last_update
+    caseByRegion.push(regionData.data)})
+.then(() =>{
+    caseByRegion[0].map(
+        item => {
+            let regionList = document.createElement('li');
+            let caseList = document.createElement('li');
+            let recoveryList = document.createElement('li');
+            let deceasedList = document.createElement('li');
+            regionList.innerHTML = `${item.region}`;
+            caseList.innerHTML = `${item.cases}`;
+            recoveryList.innerHTML = `${item.recovered}`;
+            deceasedList.innerHTML = `${item.deaths}`
+            parentList.appendChild(regionList)
+            casesList.appendChild(caseList);
+            recoveredList.appendChild(recoveryList);
+            deathList.appendChild(deceasedList);
+        }
+    )
+})
+.then(() => {
+    lastUpdateRegional = '';
+    let updateRegionalDate = document.createElement('p');
+    updateRegionalDate.innerHTML = `   ${regionalLastUpdate}`
+    regionalUpdate.appendChild(updateRegionalDate)
+})
+.then(() => console.log(caseByRegion))
+.catch(err => {console.log(err);});

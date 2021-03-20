@@ -214,6 +214,25 @@ h5{
     border-radius: 12px;
 }
 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    color: whitesmoke;
+  }
+  
+  td, th {
+    text-align: left;
+    padding: 8px;
+    text-transform: uppercase;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+    color: #212121;
+  }
+
+
 @media (max-width: 1400px){
     .cards_container{
         display: grid;
